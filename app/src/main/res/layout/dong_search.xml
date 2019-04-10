@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <ImageView
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:id="@+id/imgviewsearch"
+        android:layout_margin="3dp"
+        android:scaleType="fitXY"/>
+    <TextView
+        android:ellipsize="end"
+        android:singleLine="true"
+        android:maxWidth="250dp"
+        android:text="Name Song"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        android:id="@+id/tvsearchsong"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="7dp"
+        android:layout_toRightOf="@id/imgviewsearch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        />
+    <TextView
+        android:ellipsize="end"
+        android:singleLine="true"
+        android:maxWidth="250dp"
+        android:text="Casi"
+        android:layout_below="@id/tvsearchsong"
+         android:textColor="#9E7C7C"
+        android:textSize="18sp"
+        android:id="@+id/tvsearchcasi"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="7dp"
+        android:layout_toRightOf="@id/imgviewsearch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        />
+    
+</RelativeLayout>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/imageviewbaihat"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_margin="3dp"
+        android:scaleType="fitXY" />
+
+    <TextView
+        android:id="@+id/tvtenbaihat"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:textColor="#000000"
+        android:textSize="16sp"
+        android:text="Co Anh O Day Roi"
+        android:maxWidth="200dp"
+        android:layout_toRightOf="@id/imageviewbaihat"
+        android:layout_marginTop="7dp"
+        android:layout_marginLeft="5dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tvtencasi"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="7dp"
+        android:layout_toRightOf="@id/imageviewbaihat"
+        android:singleLine="true"
+        android:text="Ca Si"
+        android:layout_below="@id/tvtenbaihat"
+        android:textSize="14sp"
+        android:textColor="#524242"
+        />
+    <ImageView
+        android:layout_marginRight="10dp"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:id="@+id/imgiconlike"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:src="@drawable/iconlove"
+        />
+
+    <ImageView
+        android:layout_marginRight="50dp"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:id="@+id/imgicondownload"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:src="@drawable/icondownload"
+        />
+    
+</RelativeLayout>
