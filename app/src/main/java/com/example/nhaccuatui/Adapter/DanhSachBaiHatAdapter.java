@@ -142,6 +142,8 @@ public class DanhSachBaiHatAdapter extends RecyclerView.Adapter<DanhSachBaiHatAd
                             Uri uri = Uri.parse(baiHatArrayList.get(getPosition()).getLinkbaihat());
                             DownloadManager.Request request = new DownloadManager.Request(uri);
                             request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED);
+                            downloadManager.enqueue(request);
+                            dialog.dismiss();
                         }
                     });
 

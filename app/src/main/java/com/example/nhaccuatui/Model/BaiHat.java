@@ -29,6 +29,14 @@ public class BaiHat implements Parcelable {
     @Expose
     private String luotthich;
 
+    public BaiHat(String tenbaihat, String hinhbaihat, String casi, String linkbaihat, String luotthich) {
+        this.tenbaihat = tenbaihat;
+        this.hinhbaihat = hinhbaihat;
+        this.casi = casi;
+        this.linkbaihat = linkbaihat;
+        this.luotthich = luotthich;
+    }
+
     protected BaiHat(Parcel in) {
         idbaihat = in.readString();
         tenbaihat = in.readString();

@@ -2,13 +2,33 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
-
+    <ImageView
+        android:id="@+id/imgviewdownloaded"
+        android:scaleType="fitXY"
+        android:layout_width="60dp"
+        android:layout_height="50dp"
+        />
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_marginLeft="5dp">
     <TextView
         android:id="@+id/tvnameospngdownloaded"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="10dp"
+        android:layout_height="0dp"
+        android:layout_weight="1"
         android:layout_gravity="center"
+        android:gravity="center"
+        android:textStyle="bold"
         android:text="Co Anh O Day Roi"
-        android:textSize="20sp" />
+        android:textSize="14sp" />
+    <TextView
+        android:id="@+id/tvnamecasidownload"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:text="Ngoc Son"
+        android:textSize="12sp"/>
+    </LinearLayout>
 </LinearLayout>

@@ -412,20 +412,20 @@ public class PlayMusicActivity extends AppCompatActivity {
                             dialogalarm.dismiss();
                             Toast.makeText(PlayMusicActivity.this, "Đã thiết lập xong", Toast.LENGTH_SHORT).show();
                         }
-                        if(seekBarOn.getVisibility() == View.VISIBLE) {
-                            mediaPlayer.pause();
+                        if (seekBarOn.getVisibility() == View.VISIBLE) {
                             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
                                 Fragment_Disk.objectAnimator.pause();
                             }
+                            mediaPlayer.pause();
                             Timer timer = new Timer();
                             timer.schedule(new TimerTask() {
                                 @Override
                                 public void run() {
-                                        mediaPlayer.start();
-                                        imgplay.setImageResource(R.drawable.iconpause);
-                                    }
+                                    mediaPlayer.start();
+                                    imgplay.setImageResource(R.drawable.iconpause);
+                                }
 
-                            }, minuteson * 1000 );
+                            }, minuteson * 1000);
                             dialogalarm.dismiss();
                             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
                                 Fragment_Disk.objectAnimator.resume();
@@ -468,9 +468,6 @@ public class PlayMusicActivity extends AppCompatActivity {
 
     }
 
-    public void pauseMusic() {
-        mediaPlayer.stop();
-    }
 
     private void TimeSong() {
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("mm:ss");

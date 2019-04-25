@@ -1,12 +1,19 @@
 package com.example.nhaccuatui.Adapter;
 
+import android.app.Dialog;
+import android.app.DownloadManager;
 import android.content.Context;
 import android.content.Intent;
+import android.net.Uri;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.Window;
+import android.view.WindowManager;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -90,6 +97,41 @@ public class BaiHatAdapter extends RecyclerView.Adapter<BaiHatAdapter.ViewHolder
                         }
                     });
                     imgiconlike.setEnabled(false);
+                }
+            });
+
+            imgdownload.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    final Dialog dialog = new Dialog(v.getContext());
+                    dialog.setTitle("Download");
+                    dialog.setContentView(R.layout.dialog_download);
+                    Window window = dialog.getWindow();
+                    WindowManager.LayoutParams wlp = window.getAttributes();
+                    wlp.gravity = Gravity.BOTTOM;
+                    wlp.flags &= ~WindowManager.LayoutParams.FLAG_DIM_BEHIND;
+                    window.setAttributes(wlp);
+                    Button btnAcceptDownload = dialog.findViewById(R.id.btnacceptndownload);
+                    Button btnCancleDownload = dialog.findViewById(R.id.btncanceldownload);
+                    btnAcceptDownload.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            DownloadManager downloadManager = (DownloadManager) context.getSystemService(context.DOWNLOAD_SERVICE);
+                            Uri uri = Uri.parse(baiHatArrayList.get(getPosition()).getLinkbaihat());
+                            DownloadManager.Request request = new DownloadManager.Request(uri);
+                            request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED);
+                            downloadManager.enqueue(request);
+                            dialog.dismiss();
+                        }
+                    });
+
+                    btnCancleDownload.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            dialog.dismiss();
+                        }
+                    });
+                    dialog.show();
                 }
             });
 

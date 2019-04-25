@@ -19,11 +19,11 @@ import java.util.HashMap;
 
 public class AdapterDownload extends RecyclerView.Adapter<AdapterDownload.ViewHolder> {
     Context context;
-    ArrayList<HashMap<String, String>> songsList;
+    ArrayList<BaiHat> arrayListsong;
 
-    public AdapterDownload(Context context, ArrayList<HashMap<String, String>> songsList) {
+    public AdapterDownload(Context context, ArrayList<BaiHat> arrayListsong) {
         this.context = context;
-        this.songsList = songsList;
+        this.arrayListsong = arrayListsong;
     }
 
     @NonNull
@@ -36,20 +36,27 @@ public class AdapterDownload extends RecyclerView.Adapter<AdapterDownload.ViewHo
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder viewHolder, int i) {
-        viewHolder.tvnamesongdownload.setText(songsList.get(i).get("file_name"));
+        viewHolder.tvnamesongdownload.setText(arrayListsong.get(i).getTenbaihat());
+        viewHolder.tvnamecasidownload.setText(arrayListsong.get(i).getCasi());
+        Picasso.with(context).load(arrayListsong.get(i).getLinkbaihat()).into(viewHolder.imgviewsongdownload);
     }
 
     @Override
     public int getItemCount() {
-        return songsList.size();
+        return arrayListsong.size();
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
         TextView tvnamesongdownload;
+        TextView tvnamecasidownload;
+        ImageView imgviewsongdownload;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             tvnamesongdownload = itemView.findViewById(R.id.tvnameospngdownloaded);
+            tvnamecasidownload = itemView.findViewById(R.id.tvnamecasidownload);
+            imgviewsongdownload = itemView.findViewById(R.id.imgviewdownloaded);
+
         }
     }
 }
